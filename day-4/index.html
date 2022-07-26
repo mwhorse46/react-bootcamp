@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to React</title>
+  </head>
+  <body>
+    <!-- <h1 class="msg">Hello from React</h1> -->
+    <div id="main"></div>
+
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+      integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/babel">
+      // React
+      const GreetMsg = () => {
+        return <h1 className="msg">Hello from React</h1>;
+
+        // return React.createElement(
+        //   "h1",
+        //   { className: "msg" },
+        //   "Hello from React"
+        // );
+      };
+
+      // React Dom
+      // JSX - babel
+      ReactDOM.render(<GreetMsg />, document.getElementById("main"));
+    </script>
+  </body>
+</html>

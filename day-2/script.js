@@ -6,14 +6,14 @@
 // var, let, const
 
 
-
 // function statement
 // statement => command
 
+
 // function expression
 // expression => value
-
 // arrow function
+
 
 // template string
 
@@ -30,7 +30,6 @@
 // declarative coding
 
 
-
 // destructuring, rest, spread
 
 
@@ -38,9 +37,11 @@
 // fetch
 // async / await
 
+
 // class
 // inheritance
-
+// abstraction
+// polymorphism
 
 
 
