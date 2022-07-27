@@ -39,6 +39,7 @@
 
 
 // class
+// encapsulation
 // inheritance
 // abstraction
 // polymorphism
