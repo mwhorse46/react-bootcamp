@@ -1,5 +1,9 @@
 import { useState } from 'react';
-import styles from './App.module.css';
+import IsOddOrEven from './IsOddOrEven';
+import RandomCards from './RandomCards';
+
+
+
 
 function App() {
 
@@ -23,49 +27,15 @@ function App() {
       <br />
       <br />
       <IsOddOrEven value={pickedValue} />
-      <RandomCard randomValues={randomValues} setPickedValue={setPickedValue} />
+      <RandomCards randomValues={randomValues} setPickedValue={setPickedValue} />
     </>
     
   );
 }
 
 
-function IsOddOrEven({value}) {
-
-  const oddOrEven = value % 2 === 0 ? 'even' : 'odd'
-
-  return (
-    <>
-      {/* <div>Number is {value && value % 2 === 0 ? <span style={{color:'green'}}>Even</span> : <span style={{color:'red'}}>Odd</span>}</div> */}
-      <br />
-
-      <div>
-        Number is <span className={ oddOrEven === 'even' ? styles.even : styles.odd}>{oddOrEven}</span>
-      </div>
-      <br />
-    </>
-  )
-}
 
 
-function RandomCard({randomValues, setPickedValue}) {
-  
-  return (
-    <div>
-      {
-        randomValues.map((randomValue, index) => <div style={{
-          display: 'inline-block',
-          width: '150px',
-          height: '150px',
-          borderRadius: '50%',
-          backgroundColor: 'red',
-          textAlign: 'center',
-          lineHeight: '150px',
-          color: 'white'
-        }} key={index} onClick={() => setPickedValue(randomValue)}>{randomValue}</div>)
-      }
-    </div>
-  )
-}
+
 
 export default App;
