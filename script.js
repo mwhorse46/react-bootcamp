@@ -1,24 +1,6 @@
 
 
 
-// benefit's of react
-// composition
-// declarative code
-// unidirectional data-flow
-// react is javascript
-
-
-
-
-// create-react-app
-// combine multiple files -> webpack, parcel
-// processing next generation javascript -> babel
-// code quality check -> eslint
-
-
-
-
-
 // for (var i = 0; i < 10; i++) {
 //     setTimeout(() => console.log(i), 0);
 // }
@@ -35,12 +17,6 @@
 //           },
 //       },
 //   };
-
-
-
-
-
-
 
 
 

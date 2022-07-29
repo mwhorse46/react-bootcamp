@@ -37,17 +37,6 @@
 
 
 
-const fullName = 'fName'
-
-const obj = {[fullName]: 'Kawsar Ahmed'};
-
-
-
-
-
-
-
-
 
 
 
