@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, Geneva, Verdana, sans-serif, Helvetica, sans-serif;
+}
+
+.container {
+  height: 90vh;
+  background-color: #fab1a0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  padding: 15px 150px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.question-card {
+  background-color: #dfe6e9;
+  padding: 50px;
+  box-shadow: 10px 20px 40px gray;
+  width: 60vw;
+  border-radius: 5px;
+}
+
+.nextButton {
+  padding: 10px 50px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  float: right;
+  transition: 1s;
+}
+
+.nextButton:hover {
+  background-color: tomato;
+  transition: 1s;
+}
