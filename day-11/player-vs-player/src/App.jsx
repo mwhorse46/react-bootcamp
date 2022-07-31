@@ -21,7 +21,7 @@ const App = () => {
     setWinScore(parseInt(e.target[0].value));
 
     // reset input data
-    
+    e.target[0].value = '';
   }
 
   

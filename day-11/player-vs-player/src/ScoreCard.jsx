@@ -4,7 +4,7 @@ const ScoreCard = ({winScore, handleSubmit}) => {
 
   
     return (
-        <div style={{textAlign: 'center', padding: '50px', margin: '0'}}>
+        <div className='scoreCard'>
             <h1 style={{fontSize: '35px', margin: 0}}>Player Vs Player</h1>
             <h1>Wining Score: {winScore}</h1>
 

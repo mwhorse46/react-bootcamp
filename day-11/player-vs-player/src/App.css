@@ -42,6 +42,7 @@ body {
   margin-left: 15px;
   cursor: pointer;
   color: white;
+  margin-top: 10px;
 }
 
 .button {
@@ -66,6 +67,32 @@ body {
   cursor: pointer;
   border-radius: 4px;
   border: none;
-  margin-top: 10px;
+  margin-top: 8px;
   width: 62%;
+}
+
+.scoreCard {
+  text-align: center;
+  padding: 50px;
+  margin: 0;
+  overflow: hidden;
+}
+
+@media all and (max-width: 768px) {
+  .scoreInput {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .submitButton {
+    width: 100%;
+    margin-left: 0;
+  }
+  .button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .reset_button {
+    width: 100%;
+  }
 }
