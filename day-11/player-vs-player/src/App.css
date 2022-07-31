@@ -1,0 +1,71 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma;
+}
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 10px 10px 40px grey;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: lightslategrey;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.player_section {
+  background-color: grey;
+  box-shadow: 10px 10px 40px grey;
+  padding: 40px;
+  border-radius: 4px;
+  text-align: center;
+}
+.scoreInput {
+  padding: 6px 15px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: grey;
+  border: none;
+  margin-left: 15px;
+  cursor: pointer;
+  color: white;
+}
+
+.button {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  margin: 0 1%;
+  width: 30%;
+}
+
+.allow_click {
+  pointer-events: visible;
+}
+
+.disable_click {
+  pointer-events: none;
+}
+
+.reset_button {
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  margin-top: 10px;
+  width: 62%;
+}
