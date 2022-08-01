@@ -60,6 +60,7 @@ body {
 
 .disable_click {
   pointer-events: none;
+  opacity: 0.6;
 }
 
 .reset_button {

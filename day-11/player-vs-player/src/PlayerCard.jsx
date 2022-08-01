@@ -1,72 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
 
 
 
-const PlayerCard = ({winScore, setWinScore}) => {
-
-    const [playerOneScore, setPlayerOneScore] = useState(0);
-    const [playerTwoScore, setPlayerTwoScore] = useState(0);
-    const [winner, setWinner] = useState('');
-    const [pOneAllowClick, setPOneAllowClick] = useState('');
-    const [pTwoAllowClick, setPTwoAllowClick] = useState('');
-
-
-    const generateRandomNumber = () => Math.floor(Math.random() * (winScore + 1));
-
-    const handlePlayerOne = () => {
-
-        const pOneScore = generateRandomNumber();
-        setPlayerOneScore(pOneScore);
-
-        setPOneAllowClick('disable_click');
-        setPTwoAllowClick('allow_click');
-
-        if(pOneScore === winScore) {
-
-            setWinner('Player 1 is winner');
-            setPOneAllowClick('disable_click');
-            setPTwoAllowClick('disable_click');
-        }
-    }
-
-
-    const handlePlayerTwo = () => {
-
-        const pTwoScore = generateRandomNumber();
-        setPlayerTwoScore(pTwoScore);
-
-        setPTwoAllowClick('disable_click');
-        setPOneAllowClick('allow_click');
-
-        if(pTwoScore === winScore) {
-
-            setWinner('Player 2 is winner');
-            setPOneAllowClick('disable_click');
-            setPTwoAllowClick('disable_click');
-        }
-    }
-
-
-    const handleReset = () => {
-
-        setPlayerOneScore(0);
-        setPlayerTwoScore(0);
-        setWinner('');
-        setPOneAllowClick('');
-        setPTwoAllowClick('');
-        setWinScore(10);
-    }
-
-
-
+const PlayerCard = ({handlePlayerOne, handlePlayerTwo, handleReset, playerOneScore, playerTwoScore, pOneAllowClick, pTwoAllowClick, winner}) => {
 
     return (
         <div className='player_section'>
-            {/* <h4>Player 1: </h4>
-            <h4>Player 2: </h4> */}
-
+            
             {
                 winner && <h1 style={{color: 'white'}}>{winner}</h1>
             }
