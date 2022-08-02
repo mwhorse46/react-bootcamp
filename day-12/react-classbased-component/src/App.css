@@ -1,8 +1,18 @@
 .container {
   background-color: tomato;
   padding: 50px;
-  border-radius: 5px;
+  border-radius: 50%;
   margin: 10px;
   text-align: center;
   cursor: pointer;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+button {
+  padding: 7px 15px;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 4px;
 }

@@ -71,7 +71,7 @@ class App extends Component {
     const {count, randomNumbers, pickedValue} = this.state;
     
     return (
-      <div>
+      <div style={{textAlign: 'center'}}>
 
         {/* <h1>{this.state.count}</h1>
         <button onClick={this.handleIncrement.bind(this)}>Increment</button>

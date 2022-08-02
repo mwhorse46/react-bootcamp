@@ -7,13 +7,13 @@ class OddOrEven extends Component {
 
 
         return (
-            <div>
+            <div style={{textAlign: 'center'}}>
                 <h2>Count Number is: {count}</h2>
                 <h3>{count % 2 === 0 ? 'Even' : 'Odd'}</h3>
 
                 <hr />
                 {
-                    pickedValue ? <h2>Picked Number is: {pickedValue}</h2> : <p>You not picked yet</p>
+                    pickedValue ? <h2>Picked Number is: {pickedValue}</h2> : <p>You haven't picked a number yet</p>
                 }
                 {
                     pickedValue && <h3>{pickedValue % 2 === 0 ? 'Even' : 'Odd'}</h3>
