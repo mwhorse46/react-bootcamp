@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import './App.css';
+import CardNum from './CardNum';
+import OddOrEven from './OddOrEven';
 
 
 class App extends Component {
@@ -37,7 +39,11 @@ class App extends Component {
   constructor(props) {
 
     super(props);
-    this.state = {count: 0}
+    this.state = {
+      count: 0,
+      randomNumbers: [1, 3, 5, 8, 10],
+      pickedValue: null
+    }
 
     this.handleIncrement = this.handleIncrement.bind(this);
     this.handleDecrement = this.handleDecrement.bind(this);
@@ -56,9 +62,13 @@ class App extends Component {
     this.setState({count: 0});
   }
 
+  handlePickNum = (pickedNum) => {
+    this.setState({pickedValue: pickedNum});
+  }
+
 
   render() {
-
+    const {count, randomNumbers, pickedValue} = this.state;
     
     return (
       <div>
@@ -69,12 +79,17 @@ class App extends Component {
         <button onClick={this.handleReset.bind(this)}>Reset</button> */}
 
 
-        <h1>{this.state.count}</h1>
+        <h1>{count}</h1>
         <button onClick={this.handleIncrement}>Increment</button>
         <button onClick={this.handleDecrement}>Decrement</button>
         <button onClick={this.handleReset}>Reset</button>
 
-
+        <OddOrEven count={count} pickedValue={pickedValue} />
+        <hr />
+        {
+          randomNumbers.map((cardNum, i) => <CardNum key={i} cardNum={cardNum} handlePickNum={this.handlePickNum} />)
+        }
+        
 
       </div>
     );

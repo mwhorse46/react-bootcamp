@@ -1,0 +1,8 @@
+.container {
+  background-color: tomato;
+  padding: 50px;
+  border-radius: 5px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
