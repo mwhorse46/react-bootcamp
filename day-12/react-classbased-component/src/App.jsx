@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+
+
 class App extends Component {
 
   // 1st way
@@ -18,31 +20,46 @@ class App extends Component {
 
 
   // 2nd way
-  state = {count: 0}
-  handleIncrement = () => {
+  // state = {count: 0}
+  // handleIncrement = () => {
+  //   this.setState({count: this.state.count + 1});
+  // }
+  // handleDecrement = () => {
+  //   this.setState({count: this.state.count - 1});
+  // }
+  // handleReset = () => {
+  //   this.setState({count: 0});
+  // }
+
+
+
+  // 3rd way
+  constructor(props) {
+
+    super(props);
+    this.state = {count: 0}
+
+    this.handleIncrement = this.handleIncrement.bind(this);
+    this.handleDecrement = this.handleDecrement.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleIncrement() {
     this.setState({count: this.state.count + 1});
   }
-  handleDecrement = () => {
-    this.setState({count: this.state.count - 1});
+  handleDecrement() {
+    this.setState((prevState, props) => {
+      return {count: prevState.count - 1}
+    });
   }
-  handleReset = () => {
+  handleReset() {
     this.setState({count: 0});
   }
 
 
-
-
-
- 
-
-
-
-
-
-
   render() {
 
-  
+    
     return (
       <div>
 
