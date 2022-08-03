@@ -1,79 +1,31 @@
 import React, { Component } from 'react';
+import ClassComponent from './ClassComponent';
 
 class App extends Component {
+
   state = {
-    count: 0
+    showComponent: true
   }
 
-  handleIncrement = () => {
-    this.setState((prevSTate) => {
-      return {count: prevSTate.count + 1}
-    })
+  handleToggle = () => {
+    this.setState({showComponent: !this.state.showComponent})
   }
-
-
-  handleDecrement = () => {
-    this.setState((prevSTate) => {
-      return {count: prevSTate.count - 1}
-    })
-  }
-
-
-  handleReset = () => {
-    this.setState((prevSTate) => {
-      return {count: 0}
-    })
-  }
-
-  // lifecycle method
-
-  // mounting
-  // updating
-  // unmounting
-
-  constructor() {
-
-    // initialization
-    // state declaration
-
-
-    super()
-    console.log('Constructor method');
-  }
-
-
-  static getDerivedStateFromProps() {
-
-    // props hisebe jodi kuno data ase ar sei datar upor base kore jodi state update korte chai
-    // manipulate state based on parent props
-
-    console.log('getDerivedStateFromProps');
-    return null;
-  }
-
-  componentDidMount() {
-    // API request
-    // side effects (accessing dom, subscription)
-
-    console.log('componentDidMount');
-  }
-
-
-
 
 
   render() {
-    const {count} = this.state;
 
-    console.log('Render');
-
+    const {showComponent} = this.state;
+    
     return (
       <div>
         
-        <h1>Count: {count}</h1>
-        <button onClick={this.handleIncrement}>Increment</button>
-         <button onClick={this.handleDecrement}>Decrement</button>
-         <button onClick={this.handleReset}>Reset</button>
+        <h1>Hello from Class Component</h1>
+
+        <button onClick={this.handleToggle}>Toggle</button>
+
+        {
+          showComponent ? <ClassComponent /> : <p>Component is hidden</p>
+        }
       </div>
     );
   }
