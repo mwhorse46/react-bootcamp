@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import ClassComponent from './ClassComponent';
+import Counter from './Counter';
 
 class App extends Component {
 
   state = {
-    showComponent: true
+    showComponent: true,
+    appTitle: 'Title from parent component'
   }
 
   handleToggle = () => {
@@ -14,7 +15,7 @@ class App extends Component {
 
   render() {
 
-    const {showComponent} = this.state;
+    const {showComponent, appTitle} = this.state;
     
     return (
       <div>
@@ -24,7 +25,7 @@ class App extends Component {
         <button onClick={this.handleToggle}>Toggle</button>
 
         {
-          showComponent ? <ClassComponent /> : <p>Component is hidden</p>
+          showComponent ? <Counter appTitle={appTitle} /> : <p>Hidden Counter Component</p>
         }
       </div>
     );
