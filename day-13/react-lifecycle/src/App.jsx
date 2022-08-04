@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Counter from './Counter';
+import CounterFunctional from './CounterFunctional';
+
+
 
 class App extends Component {
 
@@ -25,7 +28,13 @@ class App extends Component {
         <button onClick={this.handleToggle}>Toggle</button>
 
         {
-          showComponent ? <Counter appTitle={appTitle} /> : <p>Hidden Counter Component</p>
+          showComponent ? <Counter appTitle={appTitle} /> : <p>Hidden Counter Class Component</p>
+        }
+        
+        <hr />
+
+        {
+          showComponent ? <CounterFunctional /> : <p>Hidden Counter Functional Component</p>
         }
       </div>
     );

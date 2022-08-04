@@ -20,3 +20,20 @@
 
 
 
+
+// [ ]  ==  [ ]   ➟  false কিন্ত 
+// [ ]  ==  ![ ]  ➟  true হয় কেন????
+
+console.log(![]);
+console.log(!![]);
+console.log([] == []);
+console.log([] == ![]);
+console.log([] === []);
+
+
+
+
+
+
+
+
