@@ -6,6 +6,8 @@ class ClassComponent extends Component {
     title: ''
   }
 
+  counterTimer = null;
+
   handleIncrement = () => {
     this.setState((prevSTate) => {
       return {count: prevSTate.count + 1}
@@ -61,6 +63,14 @@ class ClassComponent extends Component {
     // side effects (accessing dom, subscription)
 
     console.log('componentDidMount');
+
+    // this.counterTimer = setInterval(() => {
+
+    //   this.setState((prevSTate) => {
+    //     return {count: prevSTate.count + 1}
+    //   })
+
+    // }, 1000)
   }
 
 
@@ -70,7 +80,7 @@ class ClassComponent extends Component {
     // component update hobe ki hobe na. bole deya jay
 
     console.log('shouldComponentUpdate');
-    return false;
+    return true;
   }
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
@@ -96,6 +106,7 @@ class ClassComponent extends Component {
   // unmounting stage
   componentWillUnmount() {
 
+    // clearInterval(this.counterTimer);
     console.log("componentWillUnmount");
   }
 
