@@ -1,0 +1,112 @@
+.survey_form,
+input {
+  padding: 0;
+  margin: 0;
+  outline: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+}
+h1,
+h4 {
+  font-weight: 400;
+}
+h4 {
+  margin: 22px 0 4px;
+}
+h5 {
+  text-transform: uppercase;
+  color: #095484;
+}
+.survey-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+form {
+  width: 100%;
+  padding: 20px;
+  box-shadow: 0 2px 5px #ccc;
+  background: #fff;
+}
+input {
+  width: calc(100% - 10px);
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+textarea {
+  width: calc(100% - 6px);
+  outline: none;
+}
+input:hover,
+textarea:hover {
+  outline: none;
+  border: 1px solid #095484;
+}
+th,
+td {
+  width: 15%;
+  padding: 15px 0;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  vertical-align: unset;
+  line-height: 18px;
+  font-weight: 400;
+  word-break: break-all;
+}
+.additional-question th,
+.additional-question td {
+  width: 38%;
+}
+.course-rate th,
+.course-rate td {
+  width: 19%;
+}
+.first-col,
+.additional-question .first-col,
+.course-rate .first-col {
+  width: 24%;
+  text-align: left;
+}
+.question,
+.comments {
+  margin: 15px 0 5px;
+}
+.question-answer label {
+  display: inline-block;
+  padding: 0 20px 15px 0;
+}
+.question-answer input {
+  width: auto;
+}
+.question-answer,
+table {
+  width: 100%;
+}
+.btn-block {
+  margin-top: 20px;
+  text-align: center;
+}
+button {
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background: #095484;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #0666a3;
+}
+@media (min-width: 568px) {
+  th,
+  td {
+    word-break: keep-all;
+  }
+}
