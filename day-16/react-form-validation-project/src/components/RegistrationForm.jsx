@@ -4,7 +4,7 @@ import './RegistrationForm.css';
 
 
 
-const RegistrationForm = () => {
+const RegistrationForm = ({setShowRegistrationForm, setShowButton}) => {
 
   const [userData, setUserData] = useState({
     username: '',
@@ -17,7 +17,16 @@ const RegistrationForm = () => {
     agreedPolicy: false
   })
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({
+    username: '',
+    fullName: '',
+    email: '',
+    phoneNumber: '',
+    password: '',
+    confirmPassword: '',
+    course: '',
+    agreedPolicy: ''
+  });
 
 
   const handleInputChange = (e) => {
@@ -27,6 +36,8 @@ const RegistrationForm = () => {
       ...userData,
       [e.target.name]: isCheckbox
     })
+
+    setErrors({...errors, [e.target.name]: ''});
   }
 
   const {username, fullName, email, phoneNumber, password, confirmPassword, course, agreedPolicy} = userData;
@@ -34,16 +45,75 @@ const RegistrationForm = () => {
     e.preventDefault();
 
     const userErrors = {}
+    
     // check validation
     if(username === '') {
       userErrors.username = 'Username is required';
+      
+    } else if(!/\w/gi.test(username)) {
+      
+      userErrors.username = 'Username must be Alphanumeric character';
     }
 
     if(fullName === '') {
-      userErrors.fullName = 'FullName is required';
+      userErrors.fullName = 'Full name is required';
+
+    } else if(/[^a-z\s]/gi.test(fullName)) {
+      
+      userErrors.fullName = 'Full name must be word character';
+    }
+
+    if(email === '') {
+      userErrors.email = 'Email is required';
+      
+    } else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      
+      userErrors.email = 'Email must be valid';
+    }
+    
+    if(phoneNumber === '') {
+      userErrors.phoneNumber = 'Phone number is required';
+
+    } else if(!/^(?:\+88|88)?(01[3-9]\d{8})$/.test(phoneNumber)) {
+      
+      userErrors.phoneNumber = 'Must be valid BD phone number ';
+    }
+    
+    if(password === '') {
+      userErrors.password = 'Password is required';
+
+    } else if(!/[\w]{6,15}/gi.test(password)) {
+
+      userErrors.password = 'Password use at least 6 alphanumeric character';
+    }
+
+    if(confirmPassword === '') {
+      userErrors.confirmPassword = 'Confirm password is required';
+
+    } else if(password !== confirmPassword) {
+
+      userErrors.confirmPassword = 'Confirm password doesn\'t match';
+    }
+
+    if(course === '') {
+      userErrors.course = 'Please select your course';
+    }
+
+    if(agreedPolicy === false) {
+      userErrors.agreedPolicy = 'Please accept terms & condition before continue!';
     }
 
     setErrors(userErrors);
+
+
+    // is ok to continue
+    if(Object.keys(userErrors).length) {
+      return false;
+    }
+
+    alert('Form is successfully submitted');
+    setShowRegistrationForm(false);
+    setShowButton(true);
   }
 
 
@@ -68,7 +138,7 @@ const RegistrationForm = () => {
               </a>
             </div>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} noValidate>
             <div className="title">
               <i className="fas fa-pencil-alt"></i>
               <h2>Register here</h2>
@@ -83,7 +153,7 @@ const RegistrationForm = () => {
                   onChange={handleInputChange}
                   value={username}
                 />
-                <p style={{color: 'red'}}>{errors.username}</p>
+                <p style={{color: 'tomato'}}>{errors.username}</p>
               </div>
 
               <div className="input_group">
@@ -95,27 +165,27 @@ const RegistrationForm = () => {
                   onChange={handleInputChange}
                   value={fullName}
                 />
-                <p style={{color: 'red'}}>{errors.fullName}</p>
+                <p style={{color: 'tomato'}}>{errors.fullName}</p>
               </div>
 
               <div className="input_group">
                 <input type="email" name="email" placeholder="Email" onChange={handleInputChange} value={email} />
-                <p style={{color: 'red'}}>{errors.email}</p>
+                <p style={{color: 'tomato'}}>{errors.email}</p>
               </div>
 
               <div className="input_group">
                 <input type="number" name="phoneNumber" placeholder="Phone number" onChange={handleInputChange} value={phoneNumber} />
-                <p style={{color: 'red'}}>{errors.phoneNumber}</p>
+                <p style={{color: 'tomato'}}>{errors.phoneNumber}</p>
               </div>
 
               <div className="input_group">
                 <input type="password" name="password" placeholder="Password" onChange={handleInputChange} value={password} />
-                <p style={{color: 'red'}}>{errors.password}</p>
+                <p style={{color: 'tomato'}}>{errors.password}</p>
               </div>
 
               <div className="input_group">
                 <input type="password" name="confirmPassword" placeholder="Confirm password" onChange={handleInputChange} value={confirmPassword} />
-                <p style={{color: 'red'}}>{errors.confirmPassword}</p>
+                <p style={{color: 'tomato'}}>{errors.confirmPassword}</p>
               </div>
               
               <div className="input_group">
@@ -127,7 +197,7 @@ const RegistrationForm = () => {
                   <option value="react_js">Full Stack React</option>
                   <option value="node_js">Professional Node.js</option>
                 </select>
-                <p style={{color: 'red'}}>{errors.course}</p>
+                <p style={{color: 'tomato'}}>{errors.course}</p>
               </div>
             </div>
             
@@ -139,7 +209,9 @@ const RegistrationForm = () => {
                   Privacy Policy for Web Developer BD.
                 </a>
               </span>
+              <p style={{color: 'tomato'}}>{errors.agreedPolicy}</p>
             </div>
+            
             <button className='submitBtn' type="submit">
               Submit
             </button>

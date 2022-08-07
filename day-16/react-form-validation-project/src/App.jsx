@@ -29,7 +29,7 @@ const App = () => {
 
   
   return (
-    <div style={{backgroundColor: '#7F7F7F', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', opacity: '0.7'}}>
+    <div style={{backgroundColor: '#7F7F7F', minHeight: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
 
       {
         showButton && <>
@@ -40,7 +40,7 @@ const App = () => {
       
 
       {
-        showRegistrationForm && <RegistrationForm />
+        showRegistrationForm && <RegistrationForm setShowRegistrationForm={setShowRegistrationForm} setShowButton={setShowButton} />
       }
 
       {
