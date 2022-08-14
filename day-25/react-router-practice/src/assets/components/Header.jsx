@@ -6,13 +6,13 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 
-
-
 const Header = () => {
   let activeStyle = {
     textDecoration: "underline",
-    color: 'black'
+    color: "black",
   };
+
+  let activeClassName = "isActive nav-link";
 
   return (
     <>
@@ -23,22 +23,25 @@ const Header = () => {
           <Navbar.Collapse id="navbarScroll">
             <Nav className="me-auto my-2 my-lg-0">
               <NavLink
-                style={({isActive}) => (isActive ? activeStyle : undefined)}
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : "nav-link"
+                }
                 to="/home"
               >
                 Home
               </NavLink>
               <NavLink
-                style={({isActive}) => (isActive ? activeStyle : undefined)}
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : "nav-link"
+                }
                 to="/about"
               >
                 About
               </NavLink>
               <NavLink
-                style={({isActive}) => (isActive ? activeStyle : undefined)}
-                className="nav-link"
+                className={({ isActive }) =>
+                  isActive ? activeClassName : "nav-link"
+                }
                 to="/contact"
               >
                 Contact
