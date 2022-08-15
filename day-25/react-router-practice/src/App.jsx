@@ -21,8 +21,8 @@ const App = () => {
           <Route index element={<Home />}></Route>
           <Route path='/home' element={<Home />}></Route>
           
-          <Route path='/about' element={<About company="Web Developer BD" />}>
-            <Route path='company' element={<Company />}></Route>
+          <Route path='/about' element={<About />}>
+            <Route path='company/:name' element={<Company />}></Route>
             <Route path='founder' element={<Founder />}></Route>
           </Route>
 

@@ -8,14 +8,14 @@ import { Link, Outlet } from 'react-router-dom';
 
 
 
-const About = ({company}) => {
+const About = () => {
     return (
         <Container className='mt-5'>
             <Row >
                 <Col md='4'>
                     <ListGroup>
                         <ListGroup.Item>
-                            <Link to='company'>Company</Link>
+                            <Link to='company/webdeveloperbd'>Company</Link>
                         </ListGroup.Item>
                         
                         <ListGroup.Item>
@@ -25,8 +25,6 @@ const About = ({company}) => {
                 </Col>
                 <Col md='8'>
                     <h2>About Component</h2>
-                    <h3>Company name: {company}</h3>
-
                     <Outlet />
                 </Col>
             </Row>
