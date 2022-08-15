@@ -2,13 +2,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import About from './assets/components/About';
+import Company from './assets/components/Company';
 import Contact from './assets/components/Contact';
+import Founder from './assets/components/Founder';
 // import Footer from './assets/components/Footer';
 import Header from './assets/components/Header';
 import Home from './assets/components/Home';
 
-
-
+// complete video upto 31 minute
 const App = () => {
   return (
     <div className='text-center'>
@@ -18,7 +19,12 @@ const App = () => {
         <Routes>
           <Route index element={<Home />}></Route>
           <Route path='/home' element={<Home />}></Route>
-          <Route path='/about' element={<About company="Web Developer BD" />}></Route>
+          
+          <Route path='/about' element={<About company="Web Developer BD" />}>
+            <Route path='company' element={<Company />}></Route>
+            <Route path='founder' element={<Founder />}></Route>
+          </Route>
+
           <Route path='/contact' element={<Contact />}></Route>
         </Routes>
         
