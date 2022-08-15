@@ -1,14 +1,17 @@
 import React from 'react';
 import Col from 'react-bootstrap/esm/Col';
+import Container from 'react-bootstrap/esm/Container';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import { Link, Outlet } from 'react-router-dom';
 
 
+
+
 const About = ({company}) => {
     return (
-        <>
-            <Row className='mt-5'>
+        <Container className='mt-5'>
+            <Row >
                 <Col md='4'>
                     <ListGroup>
                         <ListGroup.Item>
@@ -27,7 +30,7 @@ const About = ({company}) => {
                     <Outlet />
                 </Col>
             </Row>
-        </>
+        </Container>
     );
 };
 

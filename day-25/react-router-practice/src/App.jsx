@@ -8,6 +8,7 @@ import Founder from './assets/components/Founder';
 // import Footer from './assets/components/Footer';
 import Header from './assets/components/Header';
 import Home from './assets/components/Home';
+import NotFound from './assets/components/NotFound';
 
 // complete video upto 31 minute
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
           </Route>
 
           <Route path='/contact' element={<Contact />}></Route>
+          <Route path='*' element={<NotFound />}></Route>
         </Routes>
         
         {/* <Footer /> */}
