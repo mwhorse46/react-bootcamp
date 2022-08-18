@@ -1,4 +1,6 @@
 import { createContext, useReducer } from "react";
+import { DECREMENT, INCREMENT, RESET } from "./actions";
+import { countReducer } from "./countReducer";
 
 
 
@@ -8,37 +10,6 @@ export const CounterContext = createContext();
 
 // create a provide
 export const CounterProvider = ({children}) => {
-
-    const INCREMENT = 'INCREMENT';
-    const DECREMENT = 'DECREMENT';
-    const RESET = 'RESET';
-    
-    const countReducer = (state, action) => {
-
-        // if(action.type === INCREMENT) {
-        //   return state + action.payload;
-        // } else {
-        //   return state;
-        // }
-
-        const {type, payload} = action;
-        switch (type) {
-
-        case INCREMENT:
-            return state + payload;
-
-        case DECREMENT:
-            return state - payload;
-
-        case RESET:
-            return payload;
-
-        default:
-            return state;
-        }
-
-    }
-
 
     // const [count, setCount] = useState(0);
     const initialState = 0;
