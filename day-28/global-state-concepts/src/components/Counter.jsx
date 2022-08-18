@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import { CounterContext } from '../App';
+import { CounterContext } from '../context/CounterContext';
+
 
 
 
@@ -9,7 +10,6 @@ const Counter = () => {
 
     const {count, handleIncrement, handleDecrement, handleReset} = useContext(CounterContext);
     
-
 
     return (
         <div>
