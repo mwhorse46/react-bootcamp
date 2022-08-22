@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_menus",
+  "info": {
+    "displayName": "menu",
+    "icon": "box"
+  },
+  "options": {},
+  "attributes": {
+    "level": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
